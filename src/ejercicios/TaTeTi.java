@@ -23,11 +23,11 @@ public class TaTeTi {
 	}
 
 	private static void seguirjugando() {
-		System.out.println("¿Seguimos jugando? S/N");
+		System.out.println("¿Seguimos jugando? S/N: ");
 		String eleccion = ingreso.next();
 		while (eleccion.equalsIgnoreCase("s")) {
 			jugar();
-			System.out.println("¿Seguimos jugando? S/N");
+			System.out.println("¿Seguimos jugando? S/N: ");
 			eleccion = ingreso.next();
 
 		}
