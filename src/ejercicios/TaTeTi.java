@@ -9,14 +9,27 @@ public class TaTeTi {
 	public static void main(String[] args) {
 
 		darBienvenida("JUGUEMOS AL TA-TE-TI");
+		jugar();
+		seguirjugando();
+		darDespedida("Â¡TE ESPERAMOS PRONTO!");
 
-		System.out.print("¿Empezamos a jugar? S/N: ");
-		String iniciarJuego = ingreso.next();
-		if (iniciarJuego.equalsIgnoreCase("s")) {
+	}
+
+	private static void darDespedida(String mensajeDespedida) {
+		dibujarDivisor(mensajeDespedida.length(), "*");
+		System.out.println(mensajeDespedida.toUpperCase());
+		dibujarDivisor(mensajeDespedida.length(), "*");
+		System.out.println();
+	}
+
+	private static void seguirjugando() {
+		System.out.println("Seguimos jugando? S/N");
+		String eleccion = ingreso.next();
+		while (eleccion.equalsIgnoreCase("s")) {
 			jugar();
+			System.out.println("Seguimos jugando? S/N");
+			eleccion = ingreso.next();
 
-		} else {
-			System.out.println("¡Te esperamos cuando quieras jugar!");
 		}
 
 	}
@@ -27,6 +40,7 @@ public class TaTeTi {
 		dibujarDivisor(mensajeBienvenida.length(), "*");
 		System.out.println();
 	}
+
 
 	private static void dibujarDivisor(int longitud, String simbolo) {
 		for (int i = 0; i < longitud; i++) {
@@ -69,10 +83,10 @@ public class TaTeTi {
 						System.out.println("Casillero ya jugado");
 					}
 				} else {
-					System.out.println("La posición no es válida");
+					System.out.println("La posiciÃ³n no es vÃ¡lida");
 				}
 
-			} while (!correcto); // VER
+			} while (!correcto);
 
 			if (turno) {
 				ponerJugada(tablero, fila, columna, jugador1);
@@ -93,10 +107,10 @@ public class TaTeTi {
 		char simbolo = coincideLinea(matriz, sinDef);
 		if (simbolo != sinDef) {
 			if (simbolo == jugador1) {
-				System.out.println("GANÓ EL JUGADOR UNO!");
+				System.out.println("GANÃ“ EL JUGADOR UNO!");
 
 			} else {
-				System.out.println("GANÓ EL JUGADOR DOS!");
+				System.out.println("GANÃ“ EL JUGADOR DOS!");
 
 			}
 			return;
@@ -106,10 +120,10 @@ public class TaTeTi {
 		simbolo = coincideColumna(matriz, sinDef);
 		if (simbolo != sinDef) {
 			if (simbolo == jugador1) {
-				System.out.println("GANÓ EL JUGADOR UNO!");
+				System.out.println("GANÃ“ EL JUGADOR UNO!");
 
 			} else {
-				System.out.println("GANÓ EL JUGADOR DOS!");
+				System.out.println("GANÃ“ EL JUGADOR DOS!");
 
 			}
 			return;
@@ -119,10 +133,10 @@ public class TaTeTi {
 		simbolo = coincideDiagonal(matriz, sinDef);
 		if (simbolo != sinDef) {
 			if (simbolo == jugador1) {
-				System.out.println("GANÓ EL JUGADOR UNO!");
+				System.out.println("GANÃ“ EL JUGADOR UNO!");
 
 			} else {
-				System.out.println("GANÓ EL JUGADOR DOS!");
+				System.out.println("GANÃ“ EL JUGADOR DOS!");
 			}
 
 			return;
@@ -315,3 +329,4 @@ public class TaTeTi {
 	}
 
 }
+
